@@ -113,20 +113,96 @@
 
 // create elements
 
-let newDiv = document.createElement('div');
-newDiv.className = 'bg-danger';
-newDiv.id = 'special-div';
-newDiv.setAttribute('title', 'what do you want');
-
-// text node
-let newDivText = document.createTextNode('Some people say we should do...');
-newDiv.appendChild(newDivText);
-
-let container = document.querySelector('header .container');
-let h1 = document.querySelector('header h1');
-
-// appent to the DOM
-// console.log(newDiv);
-container.insertBefore(newDiv, h1);
-container.insertBefore(newDiv, h1);
+// let newDiv = document.createElement('div');
+// newDiv.className = 'bg-danger';
+// newDiv.id = 'special-div';
+// newDiv.setAttribute('title', 'what do you want');
+//
+// // text node
+// let newDivText = document.createTextNode('Some people say we should do...');
+// newDiv.appendChild(newDivText);
+//
+// let container = document.querySelector('header .container');
+// let h1 = document.querySelector('header h1');
+//
+// // appent to the DOM
+// // console.log(newDiv);
+// container.insertBefore(newDiv, h1);
+// container.insertBefore(newDiv, h1); //just appends it once!
 // container.appendChild(newDiv);
+
+//---------------------------------------------------------------------//
+//                      Events and that stuff
+let btn = document.querySelector('#button');
+// let clickCounter = 0;
+// function theFunction(e) {
+//   clickCounter++;
+//   if(clickCounter%2===0) {
+//     btn.classList.remove('btn-dark');
+//     btn.classList.add('btn-success');
+//     document.querySelector('body').style.background='red';
+//   } else {
+//     document.querySelector('body').style.background='turquoise';
+//   }
+//   // console.log('clicking: #', e.target.id);
+//   // console.log(e.target.className);
+//   // console.log(e.target.classList);
+//   // console.log(e.type);
+//
+//   // console.log(e.clientX); // coordinate from the window
+//   // console.log(e.clientY);
+//
+//   // console.log(e.offsetX); // from the element
+//   // console.log(e.offsetY);
+//   // console.log(getComputedStyle(e.target).backgroundColor);
+//
+//   //checking keys when clicking
+//   // console.log(e.altKey);
+//   // console.log(e.ctrlKey);
+//   // console.log(e.shiftKey);
+// }
+let output = document.getElementById('output');
+function runEvent(e) {
+  if(e.type==='submit') {
+    e.preventDefault();
+  }
+  console.log('EVNT type', e.type);
+  // document.body.style.display = 'none';
+  // console.log(e.target.value);
+  // output.innerHTML='<h3>'+e.target.value+'</h3>';
+  // console.log('X',e.offsetX);
+  // console.log('Y',e.offsetY);
+  // going nuts!
+  // btn.style.background = `rgba(${e.offsetX}, ${e.offsetY}, ${e.offsetX + e.offsetY})`;
+}
+// btn.addEventListener('click', runEvent);
+// btn.addEventListener('dblclick', runEvent);
+// btn.addEventListener('mousedown', runEvent);
+// btn.addEventListener('mouseup', runEvent);
+
+let box = document.querySelector('#box');
+
+// these are confusing!
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseleave', runEvent);
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseout', runEvent);
+// box.addEventListener('mousemove', runEvent);
+
+let itemInput = document.querySelector('input[type="text"]');
+let form = document.querySelector('form');
+let select = document.querySelector('select');
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+// itemInput.addEventListener('focus', runEvent);
+// itemInput.addEventListener('blur', runEvent); // mean out of focus
+
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+
+// itemInput.addEventListener('input', runEvent);
+// console.log(itemInput);
+select.addEventListener('change', runEvent);
+form.addEventListener('submit', runEvent);
