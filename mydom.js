@@ -67,10 +67,66 @@
 
 // QUERY SELECTOR All
 
-let titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[1].style.fontFamily='serif';
+// let titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles[1].style.fontFamily='serif';
+//
+// let odd = document.querySelectorAll('li:nth-child(odd)');
+// // odd[0].style.background='red';
+// odd.forEach(item=>item.style.background='red');
 
-let odd = document.querySelectorAll('li:nth-child(odd)');
-// odd[0].style.background='red';
-odd.forEach(item=>item.style.background='red');
+
+// TRAVERSING THE DOM
+// parentNode
+// let itemList = document.querySelector('#items');
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.background='red';
+
+// parentElement
+// let itemList = document.querySelector('#items');
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.background='red';
+
+// childNodes
+// console.log(itemList.childNodes); //->NodeList
+
+// children
+// console.log(itemList.children); //->HTMLCollection
+
+// firstChild returns whatever child, event a line break
+// console.log(itemList.firstChild);
+
+// firstElementChild returns an html element so white space, line breaks etc are not returned
+// console.log(itemList.firstElementChild);
+
+// lastChild
+// console.log(itemList.lastChild);
+// lastElementChild
+// console.log(itemList.lastElementChild);
+
+// siblings
+// console.log(itemList.nextSibling);
+// console.log(itemList.nextElementSibling);
+// console.log(itemList.previousSibling);
+// console.log(itemList.previousElementSibling.style.color="greenyellow");
+
+
+// create elements
+
+let newDiv = document.createElement('div');
+newDiv.className = 'bg-danger';
+newDiv.id = 'special-div';
+newDiv.setAttribute('title', 'what do you want');
+
+// text node
+let newDivText = document.createTextNode('Some people say we should do...');
+newDiv.appendChild(newDivText);
+
+let container = document.querySelector('header .container');
+let h1 = document.querySelector('header h1');
+
+// appent to the DOM
+// console.log(newDiv);
+container.insertBefore(newDiv, h1);
+container.insertBefore(newDiv, h1);
+// container.appendChild(newDiv);
